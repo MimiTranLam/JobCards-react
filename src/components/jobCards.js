@@ -25,14 +25,14 @@ const JobCard = ({data}) => {
     // }
 
     const dateTime = () => {
-    const dateNow = new Date();
+    const dateNow = new Date(data.postedDate);
     const dateVals = {year: "numeric", month: "long", day: "numeric"}
     const dateFormatted = dateNow.toLocaleDateString("en-US", dateVals)
     let ampm = dateNow.getHours() >= 12 ? 'pm' : 'am';
-    const time = dateNow.getHours() + ":" + dateNow.getMinutes() + " " + ampm.toLocaleUpperCase();
+    const time = Math.abs(12 - dateNow.getHours()) + ":" + dateNow.getMinutes() + " " + ampm.toLocaleUpperCase();
     return time + " " + dateFormatted;
     };
-    
+    //postedDate":"2021-06-25T12:45:30.651Z"
     return <div className="job-card">
         <div className="title">{data.title}</div>
         <div className="skills-box">
