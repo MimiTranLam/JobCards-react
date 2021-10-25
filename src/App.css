@@ -103,15 +103,12 @@ nav {
 /* Job Cards Section */
 #sec-jobs {
   width: 100vw;
-  margin-top: 15vh;
+  margin: 15vh 0 5vh;
+  display: flex;
 }
 
+/* Job Cards Section left col */
 #sec-jobs #job-cards-left {
-  width: 50vw;
-  padding: 30px;
-}
-
-#sec-jobs #job-cards-right {
   width: 50vw;
   padding: 30px;
 }
@@ -153,4 +150,18 @@ nav {
   text-align: right;
   font-size: 0.8rem;
   color: grey;
+}
+
+/* Job Cards Section right col */
+#sec-jobs #job-card-right {
+  width: 50vw;
+  padding: 30px;
+}
+
+#job-card-right .expanded {
+  position: fixed;
+  margin: 0 1rem;
+  width: 40vw;
+  height: 75vh;
+  border: 2px solid black;
 }

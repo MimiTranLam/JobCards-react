@@ -4,7 +4,7 @@ const Navbar = () => {
     return <nav>
         <div id="nav-container">
             <form id="search-form">
-                <input placeholder="Search job..."></input>
+                <input placeholder="Search job..." ></input>
                 <button id="search-btn" type="submit"><i className="fas fa-search"></i></button>
             </form>
         </div>
