@@ -3,13 +3,11 @@ import Navbar from './components/navbar'
 import data from "./data.json"
 import JobCard from './components/jobCards';
 
-//  document.getElementById("all-jobs-btn").addEventListener("click", ()=>{
-  //   jobData = data.jobs
-  // });
-
 function App() {
 
   const jobData = data.jobs.slice(0,20);
+
+  //render job only if active = true
 
   let HTML = (<div className="App">
       <Navbar/>
@@ -22,8 +20,6 @@ function App() {
         <div id="job-cards-right"></div>
       </section>
     </div>);
-  
-
   
   return HTML;
 }

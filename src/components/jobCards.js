@@ -24,6 +24,14 @@ const JobCard = ({data}) => {
     //     return singleSkill;
     // }
 
+    const remoteColor = () => {
+        if (data.remote = "true") {
+            return {color: "green"}
+        } else {
+            return {color: "red"}
+        }
+    }
+
     const dateTime = () => {
     const dateNow = new Date(data.postedDate);
     const dateVals = {year: "numeric", month: "long", day: "numeric"}
@@ -32,13 +40,13 @@ const JobCard = ({data}) => {
     const time = Math.abs(12 - dateNow.getHours()) + ":" + dateNow.getMinutes() + " " + ampm.toLocaleUpperCase();
     return time + " " + dateFormatted;
     };
-    //postedDate":"2021-06-25T12:45:30.651Z"
+
     return <div className="job-card">
         <div className="title">{data.title}</div>
         <div className="skills-box">
             {/* <Skills/> */}
         </div>
-        Remote: <span className="remote">{data.remote ? "true" : "false" }</span>
+        Remote: <span className="remoteTF" style={remoteColor()}>{data.remote ? "TRUE" : "FALSE" }</span>
         <div className="location">Location: {data.city}</div>
         <div className="description">Description: {data.description}</div>
         <div className="date-time">Posted {dateTime()}</div>
