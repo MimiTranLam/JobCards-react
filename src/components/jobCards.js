@@ -24,14 +24,6 @@ const JobCard = ({data}) => {
     //     return singleSkill;
     // }
 
-    const remoteColor = () => {
-        if (data.remote = "true") {
-            return {color: "green"}
-        } else {
-            return {color: "red"}
-        }
-    }
-
     const dateTime = () => {
     const dateNow = new Date(data.postedDate);
     const dateVals = {year: "numeric", month: "long", day: "numeric"}
@@ -46,7 +38,10 @@ const JobCard = ({data}) => {
         <div className="skills-box">
             {/* <Skills/> */}
         </div>
-        Remote: <span className="remoteTF" style={remoteColor()}>{data.remote ? "TRUE" : "FALSE" }</span>
+            Remote: 
+            <span className="remoteTF" style={data.remote === true ? {color:"green"} : {color:"red"}}>
+                {data.remote ? "TRUE" : "FALSE" }
+            </span>
         <div className="location">Location: {data.city}</div>
         <div className="description">Description: {data.description}</div>
         <div className="date-time">Posted {dateTime()}</div>
